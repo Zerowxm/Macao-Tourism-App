@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+    <PreferenceCategory android:title="消息设置" >
+        <CheckBoxPreference
+            android:key="parent_checkbox_preference"
+            android:title="消息屏蔽" />
+        <!-- 子类的可见类型是由样式属性定义的 -->
+        <CheckBoxPreference
+            android:dependency="parent_checkbox_preference"
+            android:key="child_night_checkbox_preference"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:title="仅夜间消息屏蔽(23:00~6:00)" />
+        <CheckBoxPreference
+            android:dependency="parent_checkbox_preference"
+            android:key="child_sound_checkbox_preference"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:title="仅屏蔽声音" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="系统设置" >
+        <CheckBoxPreference
+            android:key="checkbox_preference"
+            android:title="自动检测更新" />
+        <ListPreference
+            android:dialogTitle="请选择字体大小"
+            android:key="list_preferenc"
+            android:title="字体大小" />
+        <PreferenceScreen
+            android:title="清理缓存" >
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:title="关于Macau" >
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,13 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+    <ImageView
+        android:src="@drawable/shake"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <include layout="@layout/toolbar"/>
+
+</android.support.design.widget.CoordinatorLayout>

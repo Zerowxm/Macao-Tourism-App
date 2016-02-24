@@ -1,0 +1,58 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_local_activity"
+            android:id="@+id/nav_appreciate"
+            android:title="@string/appreciate_title" />
+
+        <item
+            android:icon="@drawable/ic_shopping_cart"
+            android:id="@+id/nav_shop"
+            android:title="@string/shop_title" />
+        <!--<item-->
+            <!--android:id="@+id/nav_kinds"-->
+            <!--android:icon=""-->
+        <item
+            android:icon="@drawable/ic_map"
+            android:id="@+id/nav_map"
+            android:title="@string/coupon_map_title" />
+        <item
+            android:icon="@drawable/ic_explore"
+            android:id="@+id/nav_shake"
+            android:title="@string/shake_title" />
+
+        <item
+            android:icon="@drawable/ic_payment"
+            android:id="@+id/nav_card"
+            android:title="@string/card_title" />
+
+    </group>
+    <group android:checkableBehavior="none">
+        <item android:title="@string/about_title">
+            <menu>
+                <item
+                    android:icon="@drawable/ic_business"
+                    android:checked="false"
+                    android:checkable="false"
+                    android:id="@+id/nav_about"
+                    android:title="@string/about_title" />
+
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="none">
+        <item android:title="@string/action_settings">
+            <menu>
+                <item
+                    android:checked="false"
+                    android:checkable="false"
+                    android:icon="@drawable/ic_settings"
+                    android:id="@+id/nav_user_setting"
+                    android:title="@string/action_settings" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

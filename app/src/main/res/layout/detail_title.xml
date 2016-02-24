@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/detail_bg"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:textSize="22sp"
+        android:text="澳门著名景点大收集"
+        android:textColor="@color/accent"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_below="@id/title"
+        android:id="@+id/line"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginRight="72dp"
+        android:background="@color/accent"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/location_yellow"
+        android:id="@+id/imageView"
+        android:layout_alignTop="@+id/phone"
+        android:layout_alignStart="@+id/line" />
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/collect"
+        android:layout_marginEnd="16dp"
+        android:id="@+id/imageView2"
+        android:layout_below="@+id/phone"
+        android:layout_alignParentEnd="true" />
+    <TextView
+        android:textColor="@color/accent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="联系方式："
+        android:id="@+id/phone"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/line"
+        android:layout_toEndOf="@+id/imageView" />
+    <TextView
+        android:textColor="@color/accent"
+        android:text="位置:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/address"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:src="@drawable/coupon"
+        android:scaleType="fitXY"
+        android:layout_below="@+id/imageView2"
+        android:layout_marginTop="25dp"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_toStartOf="@+id/imageView2" />
+</RelativeLayout>

@@ -20,9 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.imporoney.ruby.MapTest;
-import com.imporoney.ruby.activities.MainDrawerActivity;
-import com.imporoney.ruby.activities.MapActivity;
+import com.imporoney.ruby.activities.MapTest;
 import com.imporoney.ruby.R;
 
 import butterknife.Bind;

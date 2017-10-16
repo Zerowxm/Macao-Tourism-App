@@ -21,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.bigkoo.pickerview.OptionsPickerView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -38,6 +39,7 @@ import com.imporoney.ruby.widget.WrappingLinearLayoutManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -256,6 +258,25 @@ public class CouponMapFragmentNew extends BaseFragment {
         });
         MyApplication.getInstnce().addToRequestQueue(jsonObjReq);
 
+    }
+
+    public void getCouponMap(int block_id, int kind_id) {
+        String url = "http://115.159.127.13:3000/things/coupon_map/jsonData=json?block_id=&kind_id=";
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(url, null,
+                new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d(TAG, response.toString());
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+            }
+        });
+        MyApplication.getInstnce().addToRequestQueue(jsonObjReq);
     }
 
     private void setupRecyclerView(RecyclerView recyclerView) {

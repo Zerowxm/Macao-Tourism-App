@@ -44,7 +44,7 @@
         <activity android:name=".activities.WelcomeActivity"></activity>
         <activity android:name=".picker.MainActivity" />
         <activity android:name=".activities.MapActivity" />
-        <activity android:name=".MapTest" />
+        <activity android:name=".activities.MapTest" />
         <activity android:name=".activities.MainDrawerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,20 +52,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activities.LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity
-            android:name=".activities.BasicActivity"
-            android:label="@string/title_activity_basic"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".SignupActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.SignupActivity" />
         <activity
             android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".activities.CouponActivity" />
+        <activity android:name=".activities.SettingsActivity" />
+        <activity android:name=".fragment.CouponActivity" />
         <activity android:name=".activities.DetailActivity"></activity>
     </application>
 

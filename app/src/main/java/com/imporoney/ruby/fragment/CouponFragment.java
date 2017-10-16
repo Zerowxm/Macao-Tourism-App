@@ -96,7 +96,7 @@ public class CouponFragment extends BaseFragment {
 
     private void setupToolBar(){
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-        setToolBar();
+        setToolBar("优惠");
         collapsingToolbar.setTitle("优惠");
         collapsingToolbar.setExpandedTitleColor(ContextCompat.getColor(getActivity(), android.R.color.transparent));
     }

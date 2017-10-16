@@ -1,12 +1,14 @@
 package com.imporoney.ruby.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.ViewGroup;
 
 import com.imporoney.ruby.activities.MainActivity;
 import com.imporoney.ruby.R;
@@ -52,6 +54,15 @@ public class BaseFragment extends Fragment {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==1){
+            ((AppCompatActivity)getActivity()).getSupportFragmentManager().beginTransaction()
+                    .replace(((ViewGroup)getView().getParent()).getId(), AppreciativeFragment.newInstance()).commitAllowingStateLoss();
+        }
     }
 
 

@@ -1,16 +1,14 @@
-package com.imporoney.ruby.activities;
+package com.imporoney.ruby.fragment;
 
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
-import com.imporoney.ruby.BaseActivity;
+import com.imporoney.ruby.activities.BaseActivity;
 import com.imporoney.ruby.R;
-import com.imporoney.ruby.utils.NestedScrollManager;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

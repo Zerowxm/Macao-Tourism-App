@@ -1,7 +1,9 @@
-package com.imporoney.ruby;
+package com.imporoney.ruby.fragment;
 
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+
+import com.imporoney.ruby.R;
 
 
 /**

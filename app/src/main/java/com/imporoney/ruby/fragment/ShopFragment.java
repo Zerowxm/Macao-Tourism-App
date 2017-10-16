@@ -113,7 +113,7 @@ public class ShopFragment extends BaseFragment {
 
     private void setupToolBar(){
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-        setToolBar();
+        setToolBar("特色店铺");
         collapsingToolbar.setTitle("特色店铺");
         collapsingToolbar.setExpandedTitleColor(ContextCompat.getColor(getActivity(), android.R.color.transparent));
       /*  toolbar.setNavigationOnClickListener(new View.OnClickListener() {

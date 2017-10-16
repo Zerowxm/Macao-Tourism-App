@@ -1,4 +1,4 @@
-package com.imporoney.ruby;
+package com.imporoney.ruby.activities;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;

@@ -123,6 +123,7 @@ public class VolleyUtil {
                     @Override
                     public void onResponse(JSONObject response) {
                         Log.d(TAG, response.toString());
+
                     }
                 }, new Response.ErrorListener() {
 
@@ -197,10 +198,26 @@ public class VolleyUtil {
 
     public static void getUserCoupon(int user_id) {
         String url = "http://115.159.127.13:3000/users/my_coupon/jsonData=json?user_id=";
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(url, null,
+                new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d(TAG, response.toString());
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+            }
+        });
+        MyApplication.getInstnce().addToRequestQueue(jsonObjReq);
     }
 
     public static void getUserCollectionDetail(int user_id) {
         String url = "http://115.159.127.13:3000/users/detail_list/jsonData=json?user_id=";
+
     }
 
     public static void getUserCollection(int user_id) {

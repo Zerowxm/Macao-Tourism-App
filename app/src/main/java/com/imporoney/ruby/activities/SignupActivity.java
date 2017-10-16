@@ -1,4 +1,4 @@
-package com.imporoney.ruby;
+package com.imporoney.ruby.activities;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -10,6 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.imporoney.ruby.R;
+import com.imporoney.ruby.application.MyApplication;
+
+import org.json.JSONObject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -23,7 +32,8 @@ public class SignupActivity extends AppCompatActivity {
     @Bind(R.id.input_password) EditText _passwordText;
     @Bind(R.id.btn_signup) Button _signupButton;
     @Bind(R.id.link_login) TextView _loginLink;
-    
+    @Bind(R.id.input_code) TextView _input_code;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -126,6 +136,51 @@ public class SignupActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_send_code)
     public void sendCode(){
+        sendCode();
+    }
 
+    public void sendCode(String phone) {
+        String url = "http://115.159.127.13:3000/send_verification_code/jsonData=json?phone=" + phone;
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(url, null,
+                new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d(TAG, response.toString());
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+            }
+        });
+        MyApplication.getInstnce().addToRequestQueue(jsonObjReq);
+    }
+
+    public void signUp(String email, String phone, String password, String code) {
+        String url = "http://115.159.127.13:3000/create/jsonData=json?phone=" + phone +
+                "&password=" + password +
+                "&email=" + email +
+                "&code=" + code;
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(url, null,
+                new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d(TAG, response.toString());
+                        if ("".equals(response.toString())){
+                            onSignupSuccess();
+                        }else
+                            onSignupFailed();
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+            }
+        });
+        MyApplication.getInstnce().addToRequestQueue(jsonObjReq);
     }
 }

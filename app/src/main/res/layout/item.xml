@@ -20,7 +20,7 @@
             android:layout_height="wrap_content">
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp">
+                android:layout_height="150dp">
                 <ImageView
                     android:id="@+id/headlogo"
                     android:layout_width="match_parent"

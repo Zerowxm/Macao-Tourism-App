@@ -1,27 +1,21 @@
-package com.imporoney.ruby;
+package com.imporoney.ruby.fragment;
 
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.imporoney.ruby.R;
 import com.imporoney.ruby.adapter.TabPagerAdapter;
-import com.imporoney.ruby.fragment.CollectionFragment;
-import com.imporoney.ruby.fragment.CollectionFragmentNew;
-import com.imporoney.ruby.fragment.CouponFragment;
-import com.imporoney.ruby.fragment.CouponFragmentNew;
-import com.imporoney.ruby.fragment.CouponMapFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

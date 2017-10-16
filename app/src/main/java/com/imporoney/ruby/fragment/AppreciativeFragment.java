@@ -26,6 +26,7 @@ import com.imporoney.ruby.activities.DetailActivity;
 import com.imporoney.ruby.activities.MainActivity;
 import com.imporoney.ruby.R;
 import com.imporoney.ruby.activities.MainDrawerActivity;
+import com.imporoney.ruby.adapter.CardRecyclerviewAdapter;
 import com.imporoney.ruby.application.MyApplication;
 import com.imporoney.ruby.modules.Test;
 import com.imporoney.ruby.modules.Thing;
@@ -97,8 +98,8 @@ public class AppreciativeFragment extends BaseFragment {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
-    /*@Bind(R.id.collapsing_toolbar)
-    CollapsingToolbarLayout collapsingToolbar;*/
+    @Bind(R.id.collapsing_toolbar)
+    CollapsingToolbarLayout collapsingToolbar;
     @Bind(R.id.recyclerview_list)
     RecyclerView recyclerView;
 
@@ -107,7 +108,7 @@ public class AppreciativeFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_appreciate_new, container, false);
+        View v = inflater.inflate(R.layout.fragment_appreciate, container, false);
         ButterKnife.bind(this, v);
         setupToolBar();
         init();
@@ -117,24 +118,24 @@ public class AppreciativeFragment extends BaseFragment {
     private void setupToolBar() {
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         setToolBar("激赏活动");
-       /* collapsingToolbar.setTitle("激赏活动");
+        collapsingToolbar.setTitle("激赏活动");
         collapsingToolbar.setExpandedTitleColor(ContextCompat.getColor(getActivity(), android.R.color.transparent));
         collapsingToolbar.setExpandedTitleColor(ContextCompat.getColor(getActivity(), android.R.color.transparent));
-*/
     }
 
 
     private void setupRecyclerView(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new RecyclerviewAdapter(getActivity(), things));
+        recyclerView.setAdapter(new CardRecyclerviewAdapter(getActivity()));
+//        recyclerView.setAdapter(new RecyclerviewAdapter(getActivity(), things));
         recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getActivity(), new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 /*((AppCompatActivity)getActivity()).getSupportFragmentManager().beginTransaction()
                         .replace(R.id.content,DetailFragment.newInstance(things.get(position-1).getId())).commitAllowingStateLoss();
                 */
-                getActivity().startActivity(new Intent(getActivity(), DetailActivity.class).putExtra("id", things.get(position - 1).getId()));
+                getActivity().startActivityForResult(new Intent(getActivity(), DetailActivity.class).putExtra("id", things.get(position - 1).getId()),1000);
 
             }
         }));

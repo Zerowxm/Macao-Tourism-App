@@ -15,9 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.imporoney.ruby.R;
-import com.imporoney.ruby.activities.CouponActivity;
 import com.imporoney.ruby.activities.DetailActivity;
-import com.imporoney.ruby.activities.MainDrawerActivity;
 import com.imporoney.ruby.utils.RecyclerItemClickListener;
 import com.imporoney.ruby.utils.ScrollManager;
 import com.imporoney.ruby.adapter.CardRecyclerviewAdapter;
@@ -109,7 +107,7 @@ public class CollectionFragment extends BaseFragment {
 
     private void setupToolBar(){
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-        setToolBar();
+        setToolBar("我的卡包");
         collapsingToolbar.setTitle("我的卡包");
         collapsingToolbar.setExpandedTitleColor(ContextCompat.getColor(getActivity(), android.R.color.transparent));
       /*  toolbar.setNavigationOnClickListener(new View.OnClickListener() {

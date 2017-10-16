@@ -1,7 +1,6 @@
 package com.imporoney.ruby.activities;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
@@ -21,13 +20,11 @@ import android.widget.ImageView;
 import com.gordonwong.materialsheetfab.MaterialSheetFab;
 import com.gordonwong.materialsheetfab.MaterialSheetFabEventListener;
 import com.imporoney.ruby.*;
-import com.imporoney.ruby.LoginActivity;
-import com.imporoney.ruby.fragment.AboutFragmentNew;
 import com.imporoney.ruby.fragment.CollectionFragmentSize;
 import com.imporoney.ruby.fragment.CouponFragment;
 import com.imporoney.ruby.fragment.CouponMapFragmentNew;
+import com.imporoney.ruby.fragment.FragmentParent;
 import com.imporoney.ruby.fragment.ShopFragmentNew;
-import com.imporoney.ruby.utils.VolleyUtil;
 import com.imporoney.ruby.widget.Fab;
 import com.imporoney.ruby.fragment.AboutFragment;
 import com.imporoney.ruby.fragment.AppreciativeFragment;
@@ -249,7 +246,7 @@ public class MainDrawerActivity extends AppCompatActivity implements
                             case R.id.nav_user_setting:
                                 getSupportFragmentManager().beginTransaction().replace(R.id.content, CollectionFragmentSize.newInstance()).commitAllowingStateLoss();
 
-//                                startActivity(new Intent(MainDrawerActivity.this, com.imporoney.ruby.SettingsActivity.class));
+//                                startActivity(new Intent(MainDrawerActivity.this, com.imporoney.ruby.activities.SettingsActivity.class));
                                 return true;
                             default:
                                 return true;
@@ -278,8 +275,5 @@ public class MainDrawerActivity extends AppCompatActivity implements
         toolbar=uri;
     }
 
-   /* @OnClick(R.id.user_name)
-    public void onLogin(View view){
-        startActivityForResult(new Intent(this, LoginActivity.class),1);
-    }*/
+
 }
